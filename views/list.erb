@@ -1,0 +1,58 @@
+<div class="container">
+ <div class="jumbotron">
+  <h2>Link List</h2>
+  <table>
+   <col width="200">
+    <col width="150">
+     <tr>
+      <td><u><b>LINK</b></u></td>
+      <td><u><b>AUTHOR</b></u></td>
+     </tr>
+  </table>
+  </br>
+  <% @links.each do |link| %>
+   <table>
+    <col width="200">
+     <col width="150">
+      <tr>
+       <td>
+        <b><a href="<%=link.linkAddress %>"><%=link.linkAddress %></a></b>
+       </td>
+       <td>
+        <b>"<%=link.linkAuthor %>"</b>
+       </td>
+      </tr>
+   </table>
+   </br>
+   <div style="margin-left:50px">
+   <table>
+    <col width="650">
+     <% @comments.where(links_id: link.id).find_each do |comment| %>
+      <tr>
+       <td>
+        <%=comment.comment %>
+       </td>
+      </tr>
+      <% end %>
+      <tr><td>&nbsp</td></tr>
+       <form id="Form <%=link.id%>" action="/comment" method="POST">
+        <tr>
+         <td>
+          <input type="text" name="comment[comment]">
+          <input type="hidden" name="comment[links_id]" value=<%=link.id%> />
+          <input type="submit" value="Comment">
+         </td>
+        </tr>
+        </form>
+       
+   </table>
+   </div>
+   <tr>
+    <td>
+     <hr>
+    </td>
+   </tr>
+   <% end %>
+   </table>
+ </div>
+</div>

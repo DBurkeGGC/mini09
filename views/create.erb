@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="jumbotron">
+    <h2>Create Link</h2>
+    <form action="/create" method="POST">
+      <table>
+        <col width="100">
+          <col width="500">
+            <tr>
+              <td>Link:</td>
+              <td>
+                <input type="url" name="link[linkAddress]" required>
+              </td>
+            </tr>
+            <tr><td>&nbsp</td></tr>
+            <tr>
+              <td>Author:</td>
+              <td>
+                <input type="text" name="link[linkAuthor]" required>
+              </td>
+            </tr>
+      </table>
+      <br>
+      <input type="submit">
+    </form>
+  </div>
+</div>
