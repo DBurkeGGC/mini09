@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20160328081948) do
 
   create_table "comments", force: :cascade do |t|
     t.string  "comment",  null: false
-    t.integer "links_id", null: false
+    t.integer "links_id"
   end
 
   create_table "links", force: :cascade do |t|
