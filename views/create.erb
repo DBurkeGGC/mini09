@@ -1,6 +1,7 @@
 <div class="container">
   <div class="jumbotron">
     <h2>Create Link</h2>
+    <hr>
     <form action="/create" method="POST">
       <table>
         <col width="100">
@@ -8,19 +9,19 @@
             <tr>
               <td>Link:</td>
               <td>
-                <input type="url" name="link[linkAddress]" required>
+                <input type="url" name="link[linkAddress]" value="http://" required>
               </td>
             </tr>
             <tr><td>&nbsp</td></tr>
             <tr>
               <td>Author:</td>
               <td>
-                <input type="text" name="link[linkAuthor]" required>
+                <input type="text" name="link[linkAuthor]">
               </td>
             </tr>
       </table>
       <br>
-      <input type="submit">
+      <input class="btn btn-info" type="submit">
     </form>
   </div>
 </div>

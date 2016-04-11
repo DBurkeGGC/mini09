@@ -17,13 +17,16 @@ ActiveRecord::Schema.define(version: 20160328081948) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
+    t.string  "author",   null: false
     t.string  "comment",  null: false
     t.integer "links_id"
   end
 
+  add_index "comments", ["links_id"], name: "index_comments_on_links_id", using: :btree
+
   create_table "links", force: :cascade do |t|
     t.string "linkAddress", null: false
-    t.string "linkAuthor",  null: false
+    t.string "linkAuthor"
   end
 
 end
